@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yuniar Falesha — UI/UX Designer</title>
+  <meta name="description" content="Portofolio pribadi Yuniar Falesha, siswa, frontend developer, dan UI/UX designer." />
+
+  <!-- Open Graph / SEO Media Sosial -->
+  <meta property="og:title" content="Yuniar Falesha — Frontend Developer & UI/UX Designer" />
+  <meta property="og:description" content="Portofolio pribadi Yuniar Falesha, siswa, frontend developer, dan UI/UX designer." />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon Placeholder -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Style Utama -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Skip Link untuk Aksesibilitas Keyboard/Screen Reader -->
+  <a href="#main-content" class="skip-link">Lompat ke konten utama</a>
+
+  <!-- ===== PAGE LOADER ===== -->
+  <div id="loader" class="loader" aria-hidden="true">
+    <div class="loader-content">
+      <span class="loader-bracket"></span>
+      <span class="loader-text">YuniarF.</span>
+      <span class="loader-bracket"></span>
+    </div>
+  </div>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a href="#home" class="logo" aria-label="Yuniar Falesha Beranda">
+        <span class="logo-bracket"></span>Yuniar<span class="logo-accent">F.</span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu" aria-label="Navigasi Utama">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="navbar-actions">
+        <!-- Dark / Light mode toggle -->
+        <button id="themeToggle" class="theme-toggle" aria-label="Ubah tema tampilan">
+          <i class="fa-solid fa-moon" aria-hidden="true"></i>
+          <i class="fa-solid fa-sun" aria-hidden="true"></i>
+        </button>
+
+        <!-- Hamburger for mobile -->
+        <button id="hamburger" class="hamburger" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="navMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== KONTEN UTAMA ===== -->
+  <main id="main-content">
+
+    <!-- ===== HERO SECTION ===== -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+
+        <div class="hero-text" data-reveal>
+          <h1 class="hero-title">
+            Saya Yuniar Falesha<span class="cursor-blink" aria-hidden="true">_</span>
+          </h1>
+          <p class="hero-role">Frontend Developer <span class="dot">•</span> UI/UX Designer</p>
+          <p class="hero-desc">
+            Saya membangun antarmuka digital yang rapi, fungsional, dan enak dipandang —
+            memadukan logika kode dengan kepekaan desain untuk menghasilkan pengalaman
+            pengguna yang terasa alami.
+          </p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">Lihat Portofolio</a>
+            <a href="#contact" class="btn btn-outline">Hubungi Saya</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" data-reveal>
+          <div class="terminal-card">
+            <div class="terminal-header">
+              <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
+              <span class="terminal-title">profile</span>
+            </div>
+            <div class="terminal-body">
+              <img src="WhatsApp Image 2026-07-23 at 20.17.27.jpeg" alt="Foto profil Yuniar Falesha" class="profile-photo" width="300" height="300" />
+              <pre class="terminal-code"><span class="tc-key">"nama"</span>: <span class="tc-string">"Yuniar Falesha"</span>,
+<span class="tc-key">"status"</span>: <span class="tc-string">"Siswa SMK Telkom Purwokerto"</span>,
+<span class="tc-key">"fokus"</span>: [<span class="tc-string">"Frontend Developer",</span><span class="tc-string">"ui/ux"</span>]</pre>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <a href="#about" class="scroll-indicator" aria-label="Gulir ke bagian Tentang Saya">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ===== ABOUT ME ===== -->
+    <section id="about" class="about section">
+      <div class="container">
+        <h2 class="section-title" data-reveal>Tentang Saya</h2>
+
+        <div class="about-grid">
+          <div class="about-card" data-reveal>
+            <div class="about-icon"><i class="fa-solid fa-code" aria-hidden="true"></i></div>
+            <h3>Latar Belakang</h3>
+            <p>
+              Saya adalah siswa SMK Telkom Purwokerto yang antusias mendalami pengembangan web
+              dan desain antarmuka. Saya percaya kode yang bersih dan desain yang matang
+              harus berjalan beriringan.
+            </p>
+          </div>
+
+          <div class="about-card" data-reveal>
+            <div class="about-icon"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i></div>
+            <h3>Cara Kerja</h3>
+            <p>
+              Setiap proyek saya mulai dari riset kecil dan sketsa ide, lalu diterjemahkan
+              menjadi antarmuka yang fungsional dengan perhatian pada detail dan pengalaman
+              pengguna.
+            </p>
+          </div>
+
+          <div class="about-card" data-reveal>
+            <div class="about-icon"><i class="fa-solid fa-rocket" aria-hidden="true"></i></div>
+            <h3>Tujuan</h3>
+            <p>
+              Saya ingin terus bertumbuh sebagai Frontend developer sekaligus desainer, membangun
+              produk digital yang bermanfaat bagi penggunanya sambil terus belajar hal baru.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" class="skills section">
+      <div class="container">
+        <h2 class="section-title" data-reveal>Keahlian</h2>
+
+        <div class="skills-grid">
+
+          <div class="skill-card" data-reveal>
+            <div class="skill-head">
+              <i class="fa-brands fa-html5 skill-icon" aria-hidden="true"></i>
+              <span class="skill-name">HTML5</span>
+            </div>
+            <div class="skill-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="Kemampuan HTML5">
+              <div class="skill-progress" data-percent="95"></div>
+            </div>
+            <span class="skill-percent">95%</span>
+          </div>
+
+          <div class="skill-card" data-reveal>
+            <div class="skill-head">
+              <i class="fa-brands fa-css3-alt skill-icon" aria-hidden="true"></i>
+              <span class="skill-name">CSS3</span>
+            </div>
+            <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="Kemampuan CSS3">
+              <div class="skill-progress" data-percent="90"></div>
+            </div>
+            <span class="skill-percent">90%</span>
+          </div>
+
+          <div class="skill-card" data-reveal>
+            <div class="skill-head">
+              <i class="fa-brands fa-js skill-icon" aria-hidden="true"></i>
+              <span class="skill-name">JavaScript</span>
+            </div>
+            <div class="skill-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="Kemampuan JavaScript">
+              <div class="skill-progress" data-percent="80"></div>
+            </div>
+            <span class="skill-percent">50%</span>
+          </div>
+
+          <div class="skill-card" data-reveal>
+            <div class="skill-head">
+              <i class="fa-solid fa-swatchbook skill-icon" aria-hidden="true"></i>
+              <span class="skill-name">UI/UX Design</span>
+            </div>
+            <div class="skill-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="Kemampuan UI/UX Design">
+              <div class="skill-progress" data-percent="85"></div>
+            </div>
+            <span class="skill-percent">85%</span>
+          </div>
+
+          <div class="skill-card" data-reveal>
+            <div class="skill-head">
+              <i class="fa-brands fa-figma skill-icon" aria-hidden="true"></i>
+              <span class="skill-name">Figma</span>
+            </div>
+            <div class="skill-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" aria-label="Kemampuan Figma">
+              <div class="skill-progress" data-percent="88"></div>
+            </div>
+            <span class="skill-percent">88%</span>
+          </div>
+
+          <div class="skill-card" data-reveal>
+            <div class="skill-head">
+              <i class="fa-brands fa-git-alt skill-icon" aria-hidden="true"></i>
+              <span class="skill-name">Git &amp; GitHub</span>
+            </div>
+            <div class="skill-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Kemampuan Git dan GitHub">
+              <div class="skill-progress" data-percent="75"></div>
+            </div>
+            <span class="skill-percent">75%</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects" class="projects section">
+      <div class="container">
+        <h2 class="section-title" data-reveal>Proyek Saya</h2>
+
+        <div class="projects-grid">
+
+          <article class="project-card" data-reveal>
+            <div class="project-thumb">
+              <img src="https://placehold.co/500x300/0F172A/8B5CF6?text=Project+01" alt="Tampilan Proyek 1" width="500" height="300" loading="lazy" />
+            </div>
+            <div class="project-body">
+              <h3>Nama Proyek 1</h3>
+              <p>Deskripsi singkat mengenai proyek ini akan ditampilkan di sini. Ganti dengan detail proyek Anda.</p>
+              <div class="tech-tags">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn btn-sm btn-primary" target="_blank" rel="noopener">Live Demo</a>
+                <a href="#" class="btn btn-sm btn-outline" target="_blank" rel="noopener">Source Code</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-reveal>
+            <div class="project-thumb">
+              <img src="https://placehold.co/500x300/0F172A/22D3EE?text=Project+02" alt="Tampilan Proyek 2" width="500" height="300" loading="lazy" />
+            </div>
+            <div class="project-body">
+              <h3>Nama Proyek 2</h3>
+              <p>Deskripsi singkat mengenai proyek ini akan ditampilkan di sini. Ganti dengan detail proyek Anda.</p>
+              <div class="tech-tags">
+                <span>Figma</span><span>UI/UX</span><span>Prototype</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn btn-sm btn-primary" target="_blank" rel="noopener">Live Demo</a>
+                <a href="#" class="btn btn-sm btn-outline" target="_blank" rel="noopener">Source Code</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="contact section">
+      <div class="container">
+        <h2 class="section-title" data-reveal>Hubungi Saya</h2>
+        <p class="section-subtitle" data-reveal>
+          Silakan hubungi saya jika ingin berdiskusi, bekerja sama, atau memiliki pertanyaan.
+        </p>
+
+        <div class="contact-grid">
+
+          <form class="contact-form" id="contactForm" data-reveal>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Nama</label>
+                <input type="text" id="name" name="name" placeholder="Nama lengkap Anda" required autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="nama@email.com" required autocomplete="email" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subjek</label>
+              <input type="text" id="subject" name="subject" placeholder="Topik pesan Anda" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Pesan</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tulis pesan Anda di sini..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              Kirim Pesan <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+            </button>
+            <p class="form-status" id="formStatus" aria-live="polite"></p>
+          </form>
+
+          <div class="contact-info" data-reveal>
+            <div class="info-item">
+              <div class="info-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></div>
+              <div>
+                <h4>Email</h4>
+                <a href="mailto:yuniar.falesha@gmail.com
+                ">yuniar.falesha@gmail.com</a>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></div>
+              <div>
+                <h4>WhatsApp</h4>
+                <a href="https://wa.me/6281234567890" target="_blank" rel="noopener">+62 857-0225-0282</a>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+              <div>
+                <h4>Lokasi</h4>
+                <p>Purwokerto, Jawa Tengah, Indonesia</p>
+              </div>
+            </div>
+
+            <div class="social-links">
+              <a href="#" class="social-icon" aria-label="Profil GitHub Yuniar Falesha" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+              <a href="#" class="social-icon" aria-label="Profil LinkedIn Yuniar Falesha" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+              <a href="#" class="social-icon" aria-label="Profil Instagram Yuniar Falesha" target="_blank" rel="noopener"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#home" class="logo" aria-label="Yuniar Falesha Beranda"><span class="logo-bracket"></span>Yuniar<span class="logo-accent">F.</span><span class="logo-bracket"></span></a>
+        <p>Made with <i class="fa-solid fa-heart" aria-hidden="true"></i> using HTML, CSS &amp; JavaScript.</p>
+      </div>
+
+      <nav class="footer-menu" aria-label="Navigasi Footer">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <p class="footer-copy"><span id="year">2026</span> Yuniar Falesha. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button id="backToTop" class="back-to-top" aria-label="Kembali ke atas halaman">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
