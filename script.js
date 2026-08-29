@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const loader = document.getElementById('loader');
   
   const hideLoader = () => {
+
     if (loader) {
       setTimeout(() => loader.classList.add('hidden'), 400);
     }
@@ -133,28 +134,59 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ---------- 6. SKILL PROGRESS BAR ANIMATION ---------- */
-  const skillBars = document.querySelectorAll('.skill-progress');
+const skillCards = document.querySelectorAll('.skill-card');
 
-  if ('IntersectionObserver' in window) {
-    const skillObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const bar = entry.target;
-          const percent = bar.getAttribute('data-percent') || '0';
+if ('IntersectionObserver' in window) {
+  const skillObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const card = entry.target;
+        const bar = card.querySelector('.skill-progress');
+        const percentText = card.querySelector('.skill-percent');
+        const progressBar = card.querySelector('.skill-bar');
+
+        if (bar && percentText) {
+          // Ambil angka dari teks persentase
+          const percent = parseInt(percentText.textContent) || 0;
+
+          // Atur panjang grafik sesuai angka
           bar.style.width = `${percent}%`;
-          skillObserver.unobserve(bar);
-        }
-      });
-    }, { threshold: 0.2 });
 
-    skillBars.forEach(bar => skillObserver.observe(bar));
-  } else {
-    // Fallback
-    skillBars.forEach(bar => {
-      const percent = bar.getAttribute('data-percent') || '0';
-      bar.style.width = `${percent}%`;
+          // Update data-percent agar tetap sinkron
+          bar.setAttribute('data-percent', percent);
+
+          // Update nilai progressbar agar sesuai
+          if (progressBar) {
+            progressBar.setAttribute('aria-valuenow', percent);
+          }
+        }
+
+        skillObserver.unobserve(card);
+      }
     });
-  }
+  }, { threshold: 0.2 });
+
+  skillCards.forEach(card => skillObserver.observe(card));
+
+} else {
+  // Fallback jika IntersectionObserver tidak tersedia
+  skillCards.forEach(card => {
+    const bar = card.querySelector('.skill-progress');
+    const percentText = card.querySelector('.skill-percent');
+    const progressBar = card.querySelector('.skill-bar');
+
+    if (bar && percentText) {
+      const percent = parseInt(percentText.textContent) || 0;
+
+      bar.style.width = `${percent}%`;
+      bar.setAttribute('data-percent', percent);
+
+      if (progressBar) {
+        progressBar.setAttribute('aria-valuenow', percent);
+      }
+    }
+  });
+}
 
   /* ---------- 7. CONTACT FORM (Demo submission) ---------- */
   const contactForm = document.getElementById('contactForm');
