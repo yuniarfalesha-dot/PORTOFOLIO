@@ -42,17 +42,17 @@
             <div class="container">
 
                 <div class="filters">
-                    <a class="filter active" href="menu.html">All</a>
-                    <a class="filter" href="menu.html">Bowls</a>
-                    <a class="filter" href="menu.html">Greens</a>
-                    <a class="filter" href="menu.html">Drinks</a>
-                    <a class="filter" href="menu.html">Bites</a>
-                    <a class="filter" href="menu.html">Specials</a>
+                    <button class="filter active" data-filter="all">All</button>
+                    <button class="filter" data-filter="bowls">Bowls</button>
+                    <button class="filter" data-filter="greens">Greens</button>
+                    <button class="filter" data-filter="drinks">Drinks</button>
+                    <button class="filter" data-filter="bites">Bites</button>
+                    <button class="filter" data-filter="specials">Specials</button>
                 </div>
 
                 <div class="product-grid menu-grid">
 
-                    <article class="product-card">
+                    <article class="product-card" data-category="bowls">
                         <img class="product-img" src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=700&q=85" alt="Avocado Dream Bowl">
                         <h3>Avocado Dream Bowl</h3>
                         <p>Fresh avocado, greens and colorful vegetables.</p>
@@ -63,7 +63,7 @@
                         </div>
                     </article>
 
-                    <article class="product-card">
+                    <article class="product-card" data-category="bowls">
                         <img class="product-img" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=700&q=85" alt="Plantify Rainbow Bowl">
                         <h3>Plantify Rainbow Bowl</h3>
                         <p>A vibrant mix of grains, greens and fresh toppings.</p>
@@ -74,7 +74,7 @@
                         </div>
                     </article>
 
-                    <article class="product-card">
+                    <article class="product-card" data-category="greens">
                         <img class="product-img" src="https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?auto=format&fit=crop&w=700&q=85" alt="Green Balance Bowl">
                         <h3>Green Balance Bowl</h3>
                         <p>Crisp greens, avocado, chickpeas and garden vegetables.</p>
@@ -85,7 +85,7 @@
                         </div>
                     </article>
 
-                    <article class="product-card">
+                    <article class="product-card" data-category="drinks">
                         <img class="product-img" src="https://images.unsplash.com/photo-1553530666-ba11a90a0868?auto=format&fit=crop&w=700&q=85" alt="Blueberry Smoothie">
                         <h3>Blueberry Smoothie</h3>
                         <p>Blueberries blended with creamy plant-based goodness.</p>
@@ -96,7 +96,7 @@
                         </div>
                     </article>
 
-                    <article class="product-card">
+                    <article class="product-card" data-category="drinks">
                         <img class="product-img" src="https://images.unsplash.com/photo-1502741224143-90386d7f8c82?auto=format&fit=crop&w=700&q=85" alt="Banana Energy Smoothie">
                         <h3>Banana Energy Smoothie</h3>
                         <p>A smooth, naturally sweet drink for a fresh boost.</p>
@@ -107,7 +107,7 @@
                         </div>
                     </article>
 
-                    <article class="product-card">
+                    <article class="product-card" data-category="bites">
                         <img class="product-img" src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=700&q=85" alt="Frozen Yogurt Bites">
                         <h3>Frozen Yogurt Bites</h3>
                         <p>Small, cool bites topped with colorful berries.</p>
@@ -118,7 +118,7 @@
                         </div>
                     </article>
 
-                    <article class="product-card">
+                    <article class="product-card" data-category="specials">
                         <img class="product-img" src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=700&q=85" alt="Garden Greens">
                         <h3>Garden Greens</h3>
                         <p>A generous bowl of crunchy greens and fresh vegetables.</p>
@@ -129,7 +129,7 @@
                         </div>
                     </article>
 
-                    <article class="product-card">
+                    <article class="product-card" data-category="bowls">
                         <img class="product-img" src="https://images.unsplash.com/photo-1494597564530-871f2b93ac55?auto=format&fit=crop&w=700&q=85" alt="Berry Bliss Bowl">
                         <h3>Berry Bliss Bowl</h3>
                         <p>Berries, banana, granola and creamy plant-based toppings.</p>
@@ -140,7 +140,7 @@
                         </div>
                     </article>
 
-                    <article class="product-card">
+                    <article class="product-card" data-category="drinks">
                         <img class="product-img" src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=700&q=85" alt="Tropical Green Drink">
                         <h3>Tropical Green Drink</h3>
                         <p>A refreshing tropical blend with a naturally green finish.</p>
@@ -194,5 +194,37 @@
         </div>
     </footer>
 
+    <script>
+    const filters = document.querySelectorAll(".filter");
+    const products = document.querySelectorAll(".product-card");
+
+    filters.forEach(filter => {
+        filter.addEventListener("click", () => {
+
+            filters.forEach(item => {
+                item.classList.remove("active");
+            });
+
+            filter.classList.add("active");
+
+            const selectedCategory = filter.dataset.filter;
+
+            products.forEach(product => {
+
+                const productCategory = product.dataset.category;
+
+                if (
+                    selectedCategory === "all" ||
+                    productCategory === selectedCategory
+                ) {
+                    product.style.display = "flex";
+                } else {
+                    product.style.display = "none";
+                }
+
+            });
+        });
+    });
+</script>
 </body>
 </html>
